@@ -6,15 +6,19 @@ import draylar.gofish.item.ExtendedFishingRodItem;
 import draylar.gofish.item.LureItem;
 import draylar.gofish.item.SoulLureItem;
 import draylar.gofish.item.TooltippedItem;
+import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.ChorusFruitItem;
 import net.minecraft.item.FoodComponent;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Rarity;
 
@@ -139,6 +143,7 @@ public class GoFishItems {
     }
 
     public static void init() {
-        // NO-OP
+        FuelRegistry.INSTANCE.add(GoFishItems.OAKFISH, 300); // same time as coal
+        FuelRegistry.INSTANCE.add(GoFishItems.CHARFISH, 1600); // same time as coal
     }
 }
