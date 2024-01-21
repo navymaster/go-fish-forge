@@ -3,7 +3,7 @@ package draylar.gofish.registry;
 import draylar.gofish.GoFish;
 import draylar.gofish.enchantment.DeepfryEnchantment;
 import net.minecraft.enchantment.Enchantment;
-import net.minecraft.registry.Registries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.registry.Registry;
 
 public class GoFishEnchantments {

@@ -14,8 +14,8 @@ import net.minecraft.client.item.ModelPredicateProviderRegistry;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.FishingRodItem;
-import net.minecraft.item.Item;
+import net.minecraft.world.item.FishingRodItem;
+import net.minecraft.world.item.Item;
 import net.minecraft.util.Identifier;
 
 @Environment(EnvType.CLIENT)

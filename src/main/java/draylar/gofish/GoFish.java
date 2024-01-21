@@ -2,15 +2,11 @@ package draylar.gofish;
 
 import draylar.gofish.command.FishCommand;
 import draylar.gofish.registry.*;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemStack;
-import net.minecraft.potion.Potions;
-import net.minecraft.recipe.BrewingRecipeRegistry;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.text.Text;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.potion.PotionType;
+import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.util.Identifier;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
@@ -31,15 +27,18 @@ public class GoFish {
     public static final String NAME = "GoFish";
     public static final String VERSION = "0.1.0";
 
-    public static final RegistryKey<ItemGroup> ITEM_GROUP = RegistryKey.of(RegistryKeys.ITEM_GROUP, id("group"));
     public static final Logger LOGGER = LogManager.getLogger();
+
+    private static final DeferredRegister<CreativeModeTab> REGISTER =
+            DeferredRegister.create(Registries.CREATIVE_MODE_TAB, GoFish.ID);
 
     public GoFish(){
         onInitialize();
     }
 
     public void onInitialize() {
-        Registry.register(Registries.ITEM_GROUP, ITEM_GROUP, CreativeModeTab.builder()
+
+        REGISTER.register("base", () -> CreativeModeTab.builder(), CreativeModeTab.builder()
                 .icon(() -> new ItemStack(GoFishItems.GOLDEN_FISH))
                 .displayName(Text.translatable("itemGroup.gofish.group"))
                 .build());
@@ -62,9 +61,9 @@ public class GoFish {
     }
 
     public static void registerBrewingRecipes() {
-        BrewingRecipeRegistry.registerPotionRecipe(Potions.AWKWARD, GoFishItems.CLOUDY_CRAB, Potions.SLOW_FALLING);
-        BrewingRecipeRegistry.registerPotionRecipe(Potions.AWKWARD, GoFishItems.CHARFISH, Potions.WEAKNESS);
-        BrewingRecipeRegistry.registerPotionRecipe(Potions.AWKWARD, GoFishItems.RAINY_BASS, Potions.WATER_BREATHING);
-        BrewingRecipeRegistry.registerPotionRecipe(Potions.AWKWARD, GoFishItems.MAGMA_COD, Potions.FIRE_RESISTANCE);
+        BrewingRecipeRegistry.addRecipe(Potions.AWKWARD, GoFishItems.CLOUDY_CRAB, Potions.SLOW_FALLING);
+        BrewingRecipeRegistry.addRecipe(Potions.AWKWARD, GoFishItems.CHARFISH, Potions.WEAKNESS);
+        BrewingRecipeRegistry.addRecipe(Potions.AWKWARD, GoFishItems.RAINY_BASS, Potions.WATER_BREATHING);
+        BrewingRecipeRegistry.addRecipe(Potions.AWKWARD, GoFishItems.MAGMA_COD, Potions.FIRE_RESISTANCE);
     }
 }

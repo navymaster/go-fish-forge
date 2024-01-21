@@ -7,7 +7,7 @@ import draylar.gofish.loot.biome.MatchBiomeLootCondition;
 import draylar.gofish.loot.moon.FullMoonCondition;
 import net.minecraft.loot.condition.LootCondition;
 import net.minecraft.loot.condition.LootConditionType;
-import net.minecraft.registry.Registries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.registry.Registry;
 
 public class GoFishLoot {

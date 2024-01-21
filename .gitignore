@@ -8,3 +8,4 @@
 /.gradle/
 /.idea/
 /.vscode/
+/src/generated

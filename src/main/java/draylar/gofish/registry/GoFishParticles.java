@@ -3,7 +3,7 @@ package draylar.gofish.registry;
 import draylar.gofish.GoFish;
 import draylar.gofish.particle.CustomDefaultParticleType;
 import net.minecraft.particle.DefaultParticleType;
-import net.minecraft.registry.Registries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.registry.Registry;
 
 public class GoFishParticles {
